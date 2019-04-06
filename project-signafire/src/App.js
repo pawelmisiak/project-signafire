@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-// import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./Nav";
 import Post from "./Post";
+import users from "./users";
 
 class App extends Component {
   randomize() {
@@ -16,7 +16,7 @@ class App extends Component {
           <Nav />
         </nav>
         <body>
-          <div className="pl3 pt4 pb4">Starred: {this.randomize()}</div>
+          <div className="pl3 pt4 pb4 f3 b">Starred: {this.randomize()}</div>
           <Post />
         </body>
       </div>

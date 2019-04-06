@@ -5,7 +5,7 @@ import logo from "./logo.png";
 const Nav = () => {
   return (
     <div className="NavBar">
-      <img src={logo} className="nav-el" alt="logo" />
+      <img src={logo} className="nav-el left-el" alt="logo" />
       <h4 className="nav-el right-el">MESSAGE VIEWER</h4>
     </div>
   );
