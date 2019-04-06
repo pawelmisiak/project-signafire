@@ -6,7 +6,8 @@ const Post = ({ userId, name, body }) => {
     <div className="post">
       <div className="pic-and-name-sec">
         <img alt="app" src={`https://robohash.org/${userId}`} />
-        <p>Alfonso Mofaso</p>
+        <p>{userId}</p>
+        {/* <p>Alfonso Mofaso</p> */}
       </div>
       <div className="date-and-post-sec">
         <p className="post-item">
