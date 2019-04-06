@@ -1,0 +1,15 @@
+.post {
+  border: 1px solid black;
+  margin: 0px 10px 10px 10px;
+  padding: 5%;
+  display: inline-block;
+}
+.pic-and-name-sec {
+  border: 1px solid black;
+}
+.date-and-post-sec {
+  border: 1px solid black;
+}
+.star-button-section {
+  border: 1px solid black;
+}

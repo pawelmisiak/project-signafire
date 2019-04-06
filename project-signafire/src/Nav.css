@@ -1,0 +1,19 @@
+.NavBar {
+  height: 50px;
+  background: lemonchiffon;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  align-items: center;
+}
+
+.nav-el {
+  margin: auto 10px;
+  height: 90%;
+  text-align: center;
+}
+
+.right-el {
+  margin-top: auto;
+  size: auto;
+}
