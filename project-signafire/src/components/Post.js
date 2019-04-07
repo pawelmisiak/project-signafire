@@ -1,6 +1,14 @@
 import React from "react";
 import "./Post.css";
 
+var buttonStyle = {
+  backgroundColor: "gray"
+};
+const click = () => {
+  this.buttonStyle.backgroundColor = "black";
+  console.log("clicked!");
+};
+
 const Post = ({ userId, name, body }) => {
   return (
     <div className="post">
@@ -17,7 +25,9 @@ const Post = ({ userId, name, body }) => {
         <p className="post-item">{body}</p>
       </div>
       <div className="star-button-sec">
-        <button className="star-button">Star Message!</button>
+        <button className="star-button" style={buttonStyle} onClick={click}>
+          Star Message!
+        </button>
       </div>
     </div>
   );
