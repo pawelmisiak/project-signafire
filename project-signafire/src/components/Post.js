@@ -51,7 +51,7 @@ class Post extends Component {
 
   render() {
     return (
-      <div className="post bg-animate hover-bg-gold">
+      <div className="post bg-animate hover-bg-gray">
         <div className="pic-and-name-sec">
           <img className="img" alt="app" src={this.props.avatar} />
           <p>{this.props.name}</p>
@@ -63,7 +63,7 @@ class Post extends Component {
           <p className="post-item">{this.props.body}</p>
         </div>
         <div className="star-button-sec">
-          <button className="star-button" onClick={this.starred}>
+          <button className="star-button" onClick={this.props.stars}>
             Star Message!
           </button>
         </div>

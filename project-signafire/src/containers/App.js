@@ -8,8 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      users: [],
-      starred: 0
+      users: [], // holds the users
+      starred: 0 // value of starred messages
     };
   }
 
@@ -21,6 +21,7 @@ class App extends Component {
     console.log(this.state.starred);
   }
 
+  // Load data from the json file
   componentDidMount() {
     var addedData = myData.map((postDetail, idx) => {
       return postDetail;

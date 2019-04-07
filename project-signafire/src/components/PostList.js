@@ -7,10 +7,10 @@ class PostList extends Component {
 
     this.state = {};
   }
+
   render() {
     return (
       <div>
-        <button onClick={this.props.stars}>click me!</button>
         {this.props.users.map((user, idx) => {
           return (
             <Post
@@ -21,6 +21,7 @@ class PostList extends Component {
               source={this.props.users[idx].source}
               avatar={this.props.users[idx].avatar}
               timestamp={this.props.users[idx].timestamp}
+              stars={this.props.stars}
             />
           );
         })}
