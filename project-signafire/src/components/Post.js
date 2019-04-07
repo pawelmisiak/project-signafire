@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import "./Post.css";
+import Button from "react-bootstrap/Button";
 
 class Post extends Component {
   constructor(props) {
@@ -63,9 +64,13 @@ class Post extends Component {
           <p className="post-item">{this.props.body}</p>
         </div>
         <div className="star-button-sec">
-          <button className="star-button" onClick={this.props.stars}>
+          <Button
+            variant="secondary"
+            className="star-button"
+            onClick={this.props.stars}
+          >
             Star Message!
-          </button>
+          </Button>
         </div>
       </div>
     );
