@@ -8,7 +8,6 @@ class Post extends Component {
     super(props);
     this.state = {
       isStarred: false,
-      myNum: 1,
       date: ""
     };
   }
@@ -67,7 +66,10 @@ class Post extends Component {
           <Button
             variant="secondary"
             className="star-button"
-            onClick={this.props.stars}
+            onClick={event => {
+              this.toggleState();
+              this.props.stars();
+            }}
           >
             Star Message!
           </Button>
