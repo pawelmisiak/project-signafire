@@ -8,9 +8,12 @@ const PostList = ({ users }) => {
         return (
           <Post
             key={idx}
-            userId={users[idx].userId}
-            name={users[idx].name}
-            body={users[idx].body}
+            userId={users[idx].id}
+            name={users[idx].handle}
+            body={users[idx].content}
+            source={users[idx].source}
+            avatar={users[idx].avatar}
+            timestamp={users[idx].timestamp}
           />
         );
       })}
