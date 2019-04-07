@@ -2,5 +2,6 @@ body {
   /* nothing here yet */
 }
 .App {
-  /* background: lightcyan; */
+  background: rgb(87, 87, 87);
+  color: white;
 }

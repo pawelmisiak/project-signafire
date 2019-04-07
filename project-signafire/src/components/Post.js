@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from "react";
 import "./Post.css";
-import { isString } from "util";
 
 class Post extends Component {
   constructor(props) {
@@ -44,7 +43,6 @@ class Post extends Component {
       this.props.timestamp.slice(8, 10) +
       ", " +
       this.props.timestamp.slice(0, 4);
-    console.log(newDate);
 
     this.setState({
       date: newDate
@@ -53,7 +51,7 @@ class Post extends Component {
 
   render() {
     return (
-      <div className="post bg-animate hover-bg-light-gray">
+      <div className="post bg-animate hover-bg-gold">
         <div className="pic-and-name-sec">
           <img className="img" alt="app" src={this.props.avatar} />
           <p>{this.props.name}</p>
@@ -65,7 +63,7 @@ class Post extends Component {
           <p className="post-item">{this.props.body}</p>
         </div>
         <div className="star-button-sec">
-          <button className="star-button" onClick={this.onClick}>
+          <button className="star-button" onClick={this.starred}>
             Star Message!
           </button>
         </div>

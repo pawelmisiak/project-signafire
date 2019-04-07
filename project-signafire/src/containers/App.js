@@ -14,9 +14,11 @@ class App extends Component {
   }
 
   starredCtr() {
+    console.log("kurwa");
     this.setState = {
-      starred: (this.starred += 1)
+      users: []
     };
+    console.log(this.state.starred);
   }
 
   componentDidMount() {
@@ -27,11 +29,6 @@ class App extends Component {
       users: addedData
     });
   }
-  // componentDidMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/posts")
-  //     .then(response => response.json())
-  //     .then(responsed => this.setState({ users: responsed }));
-  // }
 
   render() {
     return (
@@ -40,9 +37,12 @@ class App extends Component {
           <Nav />
         </nav>
         <div>
-          <div className="pl3 pt4 pb4 f3 b">Starred: {this.state.starred}</div>{" "}
+          <div className="pl3 pt4 pb4 f3 b">Starred: {this.state.starred}</div>
           {/* In className tachyons are used - styling api similar to bootstrap */}
-          <PostList users={this.state.users} starred={this.starredCtr} />
+          <PostList
+            users={this.state.users}
+            stars={this.starredCtr.bind(this)}
+          />
         </div>
       </div>
     );

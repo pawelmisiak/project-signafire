@@ -1,10 +1,11 @@
 .NavBar {
   height: 50px;
-  background: rgb(238, 238, 238);
+  background: rgb(48, 48, 48);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid rgb(196, 196, 196);
+  color: white;
 }
 
 .nav-el {
