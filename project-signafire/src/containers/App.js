@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       users: [], // holds the users
       starred: 0, // value of starred messages
-      deleted: []
+      deleted: [],
+      isUsers: true
     };
   }
 
@@ -39,6 +40,7 @@ class App extends Component {
     });
     console.log(index);
     this.updateUsersAfterDeletion(index);
+    console.log(this.state.deleted[0]);
   }
 
   updateUsersAfterDeletion(idx) {
@@ -63,6 +65,15 @@ class App extends Component {
     });
   }
 
+  changeView() {
+    var tempView = this.state.users;
+    this.setState({
+      users: this.state.deleted,
+      deleted: tempView,
+      isUsers: !this.state.isUsers
+    });
+  }
+
   render(starred) {
     return (
       <div className="App">
@@ -72,7 +83,17 @@ class App extends Component {
         <div>
           <div className="starredAndTrashed">
             <h3 className="ml4 pt4 pb4 f3 b">Starred: {this.state.starred}</h3>
-            <Button variant="outline-warning" className="trashButton mr4">
+            <Button
+              variant="outline-warning"
+              style={{
+                background: this.state.isUsers ? "" : "#f5b400",
+                color: this.state.isUsers ? "" : "black"
+              }}
+              className="trashButton mr4"
+              onClick={event => {
+                this.changeView();
+              }}
+            >
               {" "}
               Trashed
             </Button>
