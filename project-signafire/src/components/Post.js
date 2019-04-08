@@ -16,16 +16,19 @@ class Post extends Component {
     };
   }
 
+  //check and change value of Starred
   toggleState = () => {
     this.setState({
       isStarred: !this.state.isStarred
     });
   };
 
+  // make sure the component receives data before work
   componentDidMount() {
     this.getDate();
   }
 
+  // change date from iso format to mm:dd:yyyy
   getDate() {
     const monthNames = [
       "January",

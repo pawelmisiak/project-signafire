@@ -23,6 +23,7 @@ class App extends Component {
     });
   }
 
+  // Adds elements from users to deleted
   addToTrash(id) {
     var del = this.state.deleted;
     var index = 0;
@@ -38,21 +39,16 @@ class App extends Component {
     this.setState({
       deleted: del
     });
-    console.log(index);
     this.updateUsersAfterDeletion(index);
-    console.log(this.state.deleted[0]);
   }
 
+  // Removes deleted items from the screen
   updateUsersAfterDeletion(idx) {
     var temp = this.state.users.slice();
     temp.splice(idx, 1);
-    console.log(this.state.users.length);
-    console.log(temp.length);
-    console.log(this.state.deleted.length);
     this.setState({
       users: temp
     });
-    console.log("length after" + this.state.users.length);
   }
 
   // Load data from the json file
@@ -65,6 +61,7 @@ class App extends Component {
     });
   }
 
+  // Switch between normal view and trash
   changeView() {
     var tempView = this.state.users;
     this.setState({
