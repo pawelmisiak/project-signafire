@@ -5,3 +5,12 @@ body {
   background: rgb(87, 87, 87);
   color: white;
 }
+.starredAndTrashed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trashButton {
+  height: 60px;
+}

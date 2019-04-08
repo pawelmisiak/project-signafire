@@ -3,6 +3,7 @@ import "./App.css";
 import Nav from "../components/Nav";
 import PostList from "../components/PostList";
 import myData from "../data/messages.json";
+import Button from "react-bootstrap/Button";
 
 class App extends Component {
   constructor() {
@@ -69,7 +70,13 @@ class App extends Component {
           <Nav />
         </nav>
         <div>
-          <div className="pl3 pt4 pb4 f3 b">Starred: {this.state.starred}</div>
+          <div className="starredAndTrashed">
+            <h3 className="ml4 pt4 pb4 f3 b">Starred: {this.state.starred}</h3>
+            <Button variant="outline-warning" className="trashButton mr4">
+              {" "}
+              Trashed
+            </Button>
+          </div>
           {/* In className tachyons are used - styling api similar to bootstrap */}
           <PostList
             users={this.state.users}
