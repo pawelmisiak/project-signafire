@@ -2,6 +2,10 @@ import React from "react";
 import { Component } from "react";
 import "./Post.css";
 import Button from "react-bootstrap/Button";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faIgloo, faTrash } from "@fortawesome/free-solid-svg-icons";
+library.add(faIgloo, faTrash);
 
 class Post extends Component {
   constructor(props) {
@@ -62,17 +66,29 @@ class Post extends Component {
           </p>
           <p className="post-item">{this.props.body}</p>
         </div>
-        <div className="star-button-sec">
+        <div className="buttons">
           <Button
             variant="secondary"
             className="star-button"
-            style={{'border-color': this.state.isStarred ? 'yellow' : '#6c757d' }}
+            style={{
+              borderColor: this.state.isStarred ? "yellow" : "#6c757d",
+              color: this.state.isStarred ? "yellow" : "white"
+            }}
             onClick={event => {
               this.props.stars(!this.state.isStarred);
               this.toggleState();
             }}
           >
             Star Message!
+          </Button>
+          <Button
+            variant="danger"
+            className="trash-button"
+            onClick={event => {
+              this.props.deleted(this.props.id);
+            }}
+          >
+            <FontAwesomeIcon icon="trash" />
           </Button>
         </div>
       </div>

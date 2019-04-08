@@ -15,13 +15,14 @@ class PostList extends Component {
           return (
             <Post
               key={idx}
-              userId={this.props.users[idx].id}
+              id={this.props.users[idx].id}
               name={this.props.users[idx].handle}
               body={this.props.users[idx].content}
               source={this.props.users[idx].source}
               avatar={this.props.users[idx].avatar}
               timestamp={this.props.users[idx].timestamp}
               stars={this.props.stars}
+              deleted={this.props.deleted}
             />
           );
         })}
@@ -31,26 +32,3 @@ class PostList extends Component {
 }
 
 export default PostList;
-
-// const PostList = ({ users, props }) => {
-//   return (
-//     <div>
-//       {/* <button onClick={this.props.starredCtr}>click me!</button> */}
-//       {users.map((user, idx) => {
-//         return (
-//           <Post
-//             key={idx}
-//             userId={users[idx].id}
-//             name={users[idx].handle}
-//             body={users[idx].content}
-//             source={users[idx].source}
-//             avatar={users[idx].avatar}
-//             timestamp={users[idx].timestamp}
-//           />
-//         );
-//       })}
-//     </div>
-//   );
-// };
-
-// export default PostList;

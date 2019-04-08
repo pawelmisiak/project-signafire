@@ -2,23 +2,54 @@ import React, { Component } from "react";
 import "./App.css";
 import Nav from "../components/Nav";
 import PostList from "../components/PostList";
-import myData from "../messages.json";
+import myData from "../data/messages.json";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       users: [], // holds the users
-      starred: 0 // value of starred messages
+      starred: 0, // value of starred messages
+      deleted: []
     };
   }
 
+  // Check if data is starred and update Starred label
   starredCtr(isStarred) {
-    console.log('calling starredCtr');
     this.setState({
-      starred: (isStarred) ? (this.state.starred + 1) : this.state.starred - 1
+      starred: isStarred ? this.state.starred + 1 : this.state.starred - 1
     });
-    console.log(this.state.starred);
+  }
+
+  addToTrash(id) {
+    var del = this.state.deleted;
+    var index = 0;
+
+    del.push(
+      this.state.users.filter(function(item, idx) {
+        if (item.id === id) {
+          index = idx;
+        }
+        return item.id === id;
+      })
+    );
+    this.setState({
+      deleted: del
+    });
+    console.log(index);
+    this.updateUsersAfterDeletion(index);
+  }
+
+  updateUsersAfterDeletion(idx) {
+    var temp = this.state.users.slice();
+    temp.splice(idx, 1);
+    console.log(this.state.users.length);
+    console.log(temp.length);
+    console.log(this.state.deleted.length);
+    this.setState({
+      users: temp
+    });
+    console.log("length after" + this.state.users.length);
   }
 
   // Load data from the json file
@@ -43,6 +74,7 @@ class App extends Component {
           <PostList
             users={this.state.users}
             stars={this.starredCtr.bind(this)}
+            deleted={this.addToTrash.bind(this)}
           />
         </div>
       </div>
