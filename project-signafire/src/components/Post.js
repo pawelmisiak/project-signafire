@@ -66,9 +66,10 @@ class Post extends Component {
           <Button
             variant="secondary"
             className="star-button"
+            style={{'border-color': this.state.isStarred ? 'yellow' : '#6c757d' }}
             onClick={event => {
+              this.props.stars(!this.state.isStarred);
               this.toggleState();
-              this.props.stars();
             }}
           >
             Star Message!

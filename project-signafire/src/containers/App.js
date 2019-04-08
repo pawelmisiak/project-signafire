@@ -13,10 +13,11 @@ class App extends Component {
     };
   }
 
-  starredCtr() {
-    this.setState = {
-      starred: (this.state.starred += 1)
-    };
+  starredCtr(isStarred) {
+    console.log('calling starredCtr');
+    this.setState({
+      starred: (isStarred) ? (this.state.starred + 1) : this.state.starred - 1
+    });
     console.log(this.state.starred);
   }
 
@@ -37,7 +38,7 @@ class App extends Component {
           <Nav />
         </nav>
         <div>
-          <div className="pl3 pt4 pb4 f3 b">Starred: {this.state.a}</div>
+          <div className="pl3 pt4 pb4 f3 b">Starred: {this.state.starred}</div>
           {/* In className tachyons are used - styling api similar to bootstrap */}
           <PostList
             users={this.state.users}
